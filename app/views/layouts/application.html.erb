@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NakkiApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar">
+  <% if user_signed_in? %>
+      <%= link_to "Tapahtumat", events_path %>
+      <%= link_to "Paikat", places_path %>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% end %>
+
+</div>
+
+<%= yield %>
+
+</body>
+</html>
