@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => "tapahtuman nimi" %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
@@ -28,6 +28,6 @@
     <%= f.text_field :place_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button" %>
   </div>
 <% end %>

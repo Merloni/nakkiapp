@@ -1,29 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Places</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
-      <tr>
-        <td><%= place.name %></td>
-        <td><%= place.address %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% @places.each do |place| %>
+  <div class="row medium-8 large-7 columns content">
+    <h2><%= place.name %></h2>
+    <%= place.address %><br>
+    <div id="map<%= place.id %>" style='width: 100%; height: 400px;'></div>
+    <%= link_to 'Edit', edit_place_path(place) %>
+    <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </div>
+<% end %>
 <br>
+<%= link_to new_place_path, class: "ball-add" do %>
+  <%= fa_icon "plus 2x" %>
+<% end %>
 
-<%= link_to 'New Place', new_place_path %>
+
+<script>
+var maps = [];
+function initMap() {
+  $.get("http://localhost:3000/places.json", function(data) {
+    var places = data;
+
+    places.forEach(function(place){
+      var latlng = new google.maps.LatLng(place.latitude, place.longitude);
+
+      var options = {
+                      zoom: 15,
+                      center: latlng,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+
+      var e = document.getElementById("map"+place.id);
+      maps.push(new google.maps.Map(e, options))
+    });
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDWSWO0vaWjAm9tfiswx48o_HKxjy1zaM&callback=initMap" async defer></script>
