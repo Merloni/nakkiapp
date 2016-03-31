@@ -13,19 +13,15 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name, :placeholder => "tapahtuman nimi" %>
+    <%= f.text_field :name, :placeholder => "Tapahtuman nimi" %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :place_id %><br>
-    <%= f.text_field :place_id %>
+    <%= f.select :place_id, options_from_collection_for_select(@places, :id, :name_with_address) %>
   </div>
   <div class="actions">
     <%= f.submit class: "button" %>
