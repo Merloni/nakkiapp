@@ -5,24 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <div class="top-bar navbar">
-        <div class="row medium-8 large-7 columns">
-          <%= link_to "Tapahtumat", events_path %>
-          <%= link_to "Paikat", places_path %>
-          <span class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></span>
-        </div>
-      </div>
-    <% end %>
-
 
     <%= yield %>
-  </body>
 
+  </body>
 </html>

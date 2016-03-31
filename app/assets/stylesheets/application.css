@@ -12,4 +12,103 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+ *= require font-awesome
  */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+
+body {
+  background-image: url(/assets/sausages.jpg);
+  background-size:cover;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h2 small {
+  font-size: 0.5em;
+  float:right;
+}
+
+a {
+  color: #fff;
+}
+
+a:visited {
+  color: #fff;
+}
+
+label {
+  color: #fff;
+}
+
+thead {
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+tr {
+  border: 1px solid white;
+}
+
+tbody {
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+}
+
+table tr:nth-of-type(even) {
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+table tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+.content {
+  background-color: rgba(0,0,0,0.8);
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.navbar {
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+.navbar a {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-size: 1em;
+  color: #fff;
+}
+
+.navbar .logout {
+  float: right;
+}
+
+.ball-add {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: rgba(0,0,0,0.5);
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 80px;
+}
