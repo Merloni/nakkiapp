@@ -23,7 +23,37 @@
       <%= f.label :place_id %><br>
       <%= f.select :place_id, options_from_collection_for_select(@places, :id, :name_with_address) %>
     </div>
-    <div class="actions">
-      <%= f.submit "Lisää taskit", class: "button" %>
+    <div class="field">
+
     </div>
+    <div class="actions">
+      <%= f.submit "Tallenna event", class: "button" %>
+    </div>
+
+<% end %>
+<% @event.tasks.each do |task| %>
+    <h1>asd</h1>
+
+<% end %>
+
+<%= form_for(@task) do |t| %>
+
+    <h3>Lisää taskeja</h3>
+    <div class="field">
+      <%= t.label :type_id %>
+      <%= t.select :type_id, options_from_collection_for_select(@types, :id, :name) %>
+    </div>
+    <div class="field">
+      <%= t.label :start_time %>
+      <%= t.time_select :start_time, :discard_minute => true %>
+    </div>
+    <div class="field">
+      <%= t.label :end_time %>
+      <%= t.time_select :end_time, :discard_minute => true %>
+    </div>
+
+
+    <%= t.submit "Lisää task", class: "button" %>
+
+
 <% end %>

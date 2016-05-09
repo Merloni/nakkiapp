@@ -5,9 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
       <th>Start time</th>
-      <th>User</th>
       <th>Event</th>
       <th>Type</th>
       <th colspan="3"></th>
@@ -17,9 +15,7 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.name %></td>
         <td><%= task.start_time %></td>
-        <td><%= task.user_id %></td>
         <td><%= task.event_id %></td>
         <td><%= task.type_id %></td>
         <td><%= link_to 'Show', task %></td>

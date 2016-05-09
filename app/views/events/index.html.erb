@@ -1,17 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<% if @events.empty? %>
+    <h2>Ei vielä eventtejä!</h2>
+<% end %>
+
 <% @events.each do |event| %>
-  <div class="row medium-8 large-7 columns content">
-    <%= event.date %><br>
-    <h2><%=link_to event.name, event_path(event) %>
-      <%= link_to(@places[event.place_id]) do %>
-        <small>@<%= @places[event.place_id].name %></small></h2>
-      <% end %>
-    <%= link_to 'Edit', edit_event_path(event) %>
-    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </div>
+    <div class="row medium-8 large-7 columns content">
+      <%= event.date %><br>
+      <h2><%=link_to event.name, event_path(event) %>
+        <%= link_to(@places.find{|s| s.id = event.place_id}) do %>
+            <small>@<%= @places.find{|s| s.id = event.place_id}.name %></small></h2>
+        <% end %>
+        <%= link_to 'Edit', edit_event_path(event) %>
+        <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
 <% end %>
 <br>
 <%= link_to new_event_path, class: "ball-add" do %>
-  <%= fa_icon "plus 2x" %>
+    <%= fa_icon "plus 2x" %>
 <% end %>
