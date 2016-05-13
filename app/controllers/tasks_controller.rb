@@ -24,11 +24,14 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+    task_params[:event_id] = params[:event_id]
     @task = Task.new(task_params)
+
 
 
     respond_to do |format|
       if @task.save
+
         format.html { redirect_to :back, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else

@@ -32,7 +32,7 @@
 
 <% end %>
 <% @event.tasks.each do |task| %>
-    <h1>asd</h1>
+    <h1>task.name</h1>
 
 <% end %>
 
@@ -50,6 +50,9 @@
     <div class="field">
       <%= t.label :end_time %>
       <%= t.time_select :end_time, :discard_minute => true %>
+    </div>
+    <div>
+      <%= hidden_field_tag :event_id, @event.id%>
     </div>
 
 
