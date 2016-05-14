@@ -1,0 +1,60 @@
+<%= form_for(@event) do |f| %>
+    <% if @event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+          <ul>
+            <% @event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, :placeholder => "Tapahtuman nimi" %>
+    </div>
+    <div class="field">
+      <%= f.label :date %><br>
+      <%= f.date_select :date %>
+    </div>
+    <div class="field">
+      <%= f.label :place_id %><br>
+      <%= f.select :place_id, options_from_collection_for_select(@places, :id, :name_with_address) %>
+    </div>
+    <div class="field">
+
+    </div>
+    <div class="actions">
+      <%= f.submit "Tallenna event", class: "button" %>
+    </div>
+
+<% end %>
+<% @event.tasks.each do |task| %>
+    <h4><%= task.type.name %> (<%= task.start_time.strftime("%H:%M") %> - <%= task.end_time.strftime("%I:%M") %>)</h4>
+
+
+<% end %>
+
+<%= form_for(@task) do |t| %>
+
+    <h3>Lisää taskeja</h3>
+    <div class="field">
+      <%= t.label :type_id %>
+      <%= t.select :type_id, options_from_collection_for_select(@types, :id, :name) %>
+    </div>
+    <div class="field">
+      <%= t.label :start_time %>
+      <%= t.select :start_time, (@shifts.map {|s| [s.hour, s] }) %>
+    </div>
+    <div class="field">
+      <%= t.label :end_time %>
+      <%= t.select :end_time, (@shifts.map {|s| [s.hour, s] }) %>
+    </div>
+    <%= t.hidden_field :event_id, :value => @event.id %>
+
+    <%= t.submit "Lisää task", class: "button" %>
+
+
+<% end %>

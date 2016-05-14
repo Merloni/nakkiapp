@@ -28,7 +28,17 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+
+        start = @task.start_time
+        shift = {}
+        shift["task_id"] = @task.id
+        while start <= @task.end_time do
+          shift["hour"] = start.hour
+          Shift.create(shift)
+          start += 60*60
+        end
+
+        format.html { redirect_to :back, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -69,6 +79,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :start_time, :user_id, :event_id, :type_id)
+      params.require(:task).permit(:name, :start_time, :end_time, :user_id, :event_id, :type_id)
     end
 end

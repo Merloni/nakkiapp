@@ -21,6 +21,13 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @places = Place.all
+    @types = Type.all
+    @task = Task.new
+    @shifts = [Time.new(@event.date.year, @event.date.month, @event.date.day, 18, 0)]
+    (1..10).each do |i|
+      @shifts.push(@shifts[0] + i*60*60)
+    end
   end
 
   # POST /events
@@ -30,7 +37,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to edit_event_path(@event.id), notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -44,7 +51,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }

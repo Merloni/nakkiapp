@@ -1,25 +1,26 @@
 <div class="row medium-8 large-7 columns content">
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
+  <h1>
     <%= @event.name %>
-  </p>
+  </h1>
 
   <p>
-    <strong>Date:</strong>
+    <strong>Aika:</strong>
     <%= @event.date %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= @event.user_id %>
+    <strong>Paikka:</strong>
+    <%= @event.place.name %>
   </p>
 
   <p>
-    <strong>Place:</strong>
-    <%= @event.place_id %>
+    <strong>Vastuuhenkilö:</strong>
+    <%= @event.user_id %>
   </p>
+
+
 
   <%= link_to 'Edit', edit_event_path(@event) %> |
   <%= link_to 'Back', events_path %>
