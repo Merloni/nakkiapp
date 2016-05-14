@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326061421) do
+ActiveRecord::Schema.define(version: 20160513110840) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -31,21 +31,14 @@ ActiveRecord::Schema.define(version: 20160326061421) do
     t.float    "longitude"
   end
 
-  create_table "task_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_time"
     t.integer  "user_id"
     t.integer  "event_id"
     t.integer  "type_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "task_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "types", force: :cascade do |t|
@@ -69,6 +62,8 @@ ActiveRecord::Schema.define(version: 20160326061421) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

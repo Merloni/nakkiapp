@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users
+  #devise_for :users
   resources :tasks
   resources :types
   resources :events
-  resources :users
+  #resources :users
   resources :places
+  get '/users/auth/:provider/callback', to: 'users/omniauth_callbacks#tekis'
+  get '/kulli', to: 'users/omniauth_callbacks#tekis'
 
+
+  Rails.application.routes.draw do
+    devise_for :users, controllers: {
+      sessions: 'users/sessions'
+    }
+  end
 
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
