@@ -32,7 +32,11 @@
 
 <% end %>
 <% @event.tasks.each do |task| %>
-    <h1>task.name</h1>
+    <h4><%= task.type.name %></h4>
+    <% if task.user.nil? %>
+        Ei tekijää
+    <% end %>
+
 
 <% end %>
 
@@ -51,10 +55,7 @@
       <%= t.label :end_time %>
       <%= t.time_select :end_time, :discard_minute => true %>
     </div>
-    <div>
-      <%= hidden_field_tag :event_id, @event.id%>
-    </div>
-
+    <%= t.hidden_field :event_id, :value => @event.id%>
 
     <%= t.submit "Lisää task", class: "button" %>
 

@@ -24,7 +24,6 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    task_params[:event_id] = params[:event_id]
     @task = Task.new(task_params)
 
 
