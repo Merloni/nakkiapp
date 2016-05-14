@@ -112,3 +112,7 @@ table tr:nth-of-type(odd) {
     text-align: center;
     line-height: 80px;
 }
+
+.task {
+  margin-bottom: 20px;
+}

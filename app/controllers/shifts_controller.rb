@@ -7,6 +7,20 @@ class ShiftsController < ApplicationController
     @shifts = Shift.all
   end
 
+  def take
+    shift = Shift.find(params[:id])
+    shift.user_id = current_user.id
+    shift.save
+
+    respond_to do |format|
+      if shift.save
+        format.html { redirect_to root_path, notice: 'Shift was successfully created.' }
+      else
+        format.html { render root_path }
+      end
+    end
+  end
+
   # GET /shifts/1
   # GET /shifts/1.json
   def show

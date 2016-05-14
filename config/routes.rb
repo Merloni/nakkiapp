@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :places
 
+  get 'shift/:id/take' => 'shifts#take', as: :take_shift
 
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.

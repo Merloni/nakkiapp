@@ -24,6 +24,10 @@ class EventsController < ApplicationController
     @places = Place.all
     @types = Type.all
     @task = Task.new
+    @shifts = [Time.new(@event.date.year, @event.date.month, @event.date.day, 18, 0)]
+    (1..10).each do |i|
+      @shifts.push(@shifts[0] + i*60*60)
+    end
   end
 
   # POST /events
@@ -45,7 +49,6 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to root_path, notice: 'Event was successfully updated.' }

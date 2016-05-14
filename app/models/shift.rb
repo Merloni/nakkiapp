@@ -1,4 +1,4 @@
 class Shift < ActiveRecord::Base
   belongs_to :task
-  has_many :users
+  belongs_to :user
 end

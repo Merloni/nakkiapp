@@ -32,10 +32,7 @@
 
 <% end %>
 <% @event.tasks.each do |task| %>
-    <h4><%= task.type.name %></h4>
-    <% if task.user.nil? %>
-        Ei tekijää
-    <% end %>
+    <h4><%= task.type.name %> (<%= task.start_time.strftime("%H:%M") %> - <%= task.end_time.strftime("%I:%M") %>)</h4>
 
 
 <% end %>
@@ -49,13 +46,13 @@
     </div>
     <div class="field">
       <%= t.label :start_time %>
-      <%= t.time_select :start_time, :discard_minute => true %>
+      <%= t.select :start_time, (@shifts.map {|s| [s.hour, s] }) %>
     </div>
     <div class="field">
       <%= t.label :end_time %>
-      <%= t.time_select :end_time, :discard_minute => true %>
+      <%= t.select :end_time, (@shifts.map {|s| [s.hour, s] }) %>
     </div>
-    <%= t.hidden_field :event_id, :value => @event.id%>
+    <%= t.hidden_field :event_id, :value => @event.id %>
 
     <%= t.submit "Lisää task", class: "button" %>
 
