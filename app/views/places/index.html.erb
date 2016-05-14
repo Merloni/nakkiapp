@@ -23,6 +23,7 @@
 
 <script>
   var maps = [];
+  var markers= [];
   function initMap() {
     $.get("http://nakkiapp.herokuapp.com/places.json", function(data) {
       var places = data;
@@ -30,14 +31,22 @@
       places.forEach(function(place){
         var latlng = new google.maps.LatLng(place.latitude, place.longitude);
 
-        var options = {
+        var mapOptions = {
           zoom: 15,
           center: latlng,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-
         var e = document.getElementById("map"+place.id);
-        maps.push(new google.maps.Map(e, options))
+        var map new google.maps.Map(e, mapOptions);
+
+        var markerOptions = {
+          position: latlng,
+          map: map,
+          title: place.name
+        }
+
+        maps.push(map)
+        markers.push(new google.maps.Marker(markerOptions);
       });
     });
   }
