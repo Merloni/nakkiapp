@@ -24,7 +24,7 @@
 <script>
   var maps = [];
   function initMap() {
-    $.get("http://localhost:3000/places.json", function(data) {
+    $.get("http://nakkiapp.herokuapp.com/places.json", function(data) {
       var places = data;
 
       places.forEach(function(place){
