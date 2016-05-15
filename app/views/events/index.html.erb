@@ -28,7 +28,7 @@
       </thead>
 
       <tbody>
-        <% task.shifts.each do |shift| %>
+        <% task.shifts.order(:created_at).each do |shift| %>
         <tr>
           <td><%= shift.task.type.name %></td>
           <td>
