@@ -2,6 +2,11 @@
 
 Projekti on edelleen kehityksen alla, ja saadaan toivon mukaan käyttöön syksyyn mennessä, ennen uusien opiskelijoiden saapumista.
 
+###TODO
+- oauth kirjautuminen TKO-älyn jäsentietokannan tunnuksilla
+- hallintasivut
+- taulukoiden parannukset
+
 ##Nakkiapp
 
 Nakkiapp on järjestöaktiivien käyttöön tarkoitettu työkalu, jonka avulla voidaan helpottaa tapahtumien työnjakoa. Applikaatioon voidaan lisätä paikkoja ja tapahtumia. Lisättyihin tapahtumiin voidaan sitten lisätä erilaisia tehtäviä, ja näitä varten vuoroja, joita käyttäjät voivat varata itselleen.
