@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  validates_numericality_of :end_time, greater_than: :start_time
+  validate :end_time_is_after_start_time
   belongs_to :user
   belongs_to :type
   belongs_to :event, dependent: :destroy
@@ -13,4 +13,10 @@ class Task < ActiveRecord::Base
       time.strftime("%H:%M")
     end
   end
+  def end_time_is_after_start_time
+    if end_time < start_time
+      errors.add(:end_time, "must be after start time")
+    end
+  end
+
 end
