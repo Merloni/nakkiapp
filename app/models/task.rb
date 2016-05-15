@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
   validate :end_time_is_after_start_time
+  validates_presence_of :type
+
   belongs_to :user
   belongs_to :type
   belongs_to :event, dependent: :destroy

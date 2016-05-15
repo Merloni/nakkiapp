@@ -1,4 +1,5 @@
 class Shift < ActiveRecord::Base
+  validates_presence_of :task
   belongs_to :task
   belongs_to :user
 
