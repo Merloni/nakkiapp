@@ -13,3 +13,5 @@ Uuden tapahtuman luominen onnistuu painamalla etusivulla oikeassa alareunassa n�
 ###Testaaminen
 
 Projektiin on kirjoitettu jonkin verran yksikkötestejä, jotka testaavat modelien validaation olevan kunnossa. Applikaation normaali käyttöflow on tällä hetkellä sen verran yksinkertainen, ettei siihen ole feature-testejä.
+
+###
