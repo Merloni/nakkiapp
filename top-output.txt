@@ -1,0 +1,130 @@
+Processes: 409 total, 2 running, 14 stuck, 393 sleeping, 2672 threads 
+2016/05/15 21:05:16
+Load Avg: 1.48, 1.42, 1.47 
+CPU usage: 7.73% user, 14.28% sys, 77.97% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2295M wired), 82M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903347/6586M in, 8027697/1979M out.
+Disks: 4411472/154G read, 3810989/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64+    1532K+ 0B   1020K+ 93474 1    sleeping *0[259+] 0.00000 0.00000    0   8413+  148+ 33678+  12386+  23376+ 23719+  28790+ 1+      131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 3 running, 14 stuck, 392 sleeping, 2678 threads 
+2016/05/15 21:05:17
+Load Avg: 1.48, 1.42, 1.47 
+CPU usage: 1.61% user, 2.48% sys, 95.90% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2273M wired), 91M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903369/6586M in, 8027699/1979M out.
+Disks: 4411476/154G read, 3810989/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 2 running, 14 stuck, 393 sleeping, 2673 threads 
+2016/05/15 21:05:18
+Load Avg: 1.48, 1.42, 1.47 
+CPU usage: 1.8% user, 0.84% sys, 98.6% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2278M wired), 91M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903390/6586M in, 8027700/1979M out.
+Disks: 4411476/154G read, 3810989/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 2 running, 14 stuck, 393 sleeping, 2674 threads 
+2016/05/15 21:05:19
+Load Avg: 1.48, 1.42, 1.47 
+CPU usage: 1.32% user, 0.96% sys, 97.71% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2283M wired), 91M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903411/6586M in, 8027701/1979M out.
+Disks: 4411476/154G read, 3810989/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 2 running, 15 stuck, 392 sleeping, 2461 threads 
+2016/05/15 21:05:20
+Load Avg: 1.44, 1.41, 1.47 
+CPU usage: 2.53% user, 3.38% sys, 94.8% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2303M wired), 92M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903440/6586M in, 8027714/1979M out.
+Disks: 4411477/154G read, 3811054/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 2 running, 15 stuck, 392 sleeping, 2456 threads 
+2016/05/15 21:05:21
+Load Avg: 1.44, 1.41, 1.47 
+CPU usage: 1.90% user, 1.90% sys, 96.19% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2289M wired), 91M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903471/6586M in, 8027732/1979M out.
+Disks: 4411478/154G read, 3811054/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 2 running, 15 stuck, 392 sleeping, 2457 threads 
+2016/05/15 21:05:22
+Load Avg: 1.44, 1.41, 1.47 
+CPU usage: 2.28% user, 1.68% sys, 96.3% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2289M wired), 93M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903504/6586M in, 8027753/1979M out.
+Disks: 4411478/154G read, 3811054/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 2 running, 14 stuck, 393 sleeping, 2458 threads 
+2016/05/15 21:05:23
+Load Avg: 1.44, 1.41, 1.47 
+CPU usage: 1.55% user, 1.19% sys, 97.24% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2294M wired), 92M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903525/6586M in, 8027756/1979M out.
+Disks: 4411492/154G read, 3811092/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 3 running, 14 stuck, 392 sleeping, 2462 threads 
+2016/05/15 21:05:24
+Load Avg: 1.44, 1.41, 1.47 
+CPU usage: 1.44% user, 1.44% sys, 97.11% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2275M wired), 92M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903549/6586M in, 8027761/1979M out.
+Disks: 4411492/154G read, 3811092/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  
+Processes: 409 total, 2 running, 14 stuck, 393 sleeping, 2451 threads 
+2016/05/15 21:05:25
+Load Avg: 1.48, 1.42, 1.47 
+CPU usage: 2.16% user, 2.4% sys, 95.79% idle 
+SharedLibs: 181M resident, 25M data, 29M linkedit.
+MemRegions: 133834 total, 6576M resident, 117M private, 2572M shared.
+PhysMem: 16G used (2281M wired), 90M unused.
+VM: 1174G vsize, 533M framework vsize, 19295624(0) swapins, 20685425(0) swapouts.
+Networks: packets: 9903571/6586M in, 8027762/1979M out.
+Disks: 4411492/154G read, 3811092/163G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM    PURG CMPRS  PGRP  PPID STATE    BOOSTS   %CPU_ME %CPU_OTHRS UID FAULTS COW  MSGSENT MSGRECV SYSBSD SYSMACH CSW    PAGEINS IDLEW POWER USER #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+93474  com.apple.Ambien 0.0  00:00.84 3   0   64     1532K  0B   1020K  93474 1    sleeping  0[259]  0.00000 0.00000    0   8413   148  33678   12386   23376  23719   28790  1       131   0.0   root N/A    N/A   N/A   N/A   N/A   N/A  

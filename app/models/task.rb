@@ -5,8 +5,8 @@ class Task < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :type
-  belongs_to :event, dependent: :destroy
-  has_many :shifts
+  belongs_to :event
+  has_many :shifts, dependent: :delete_all
 
 
   def to_hours_and_minutes(time)
