@@ -16,9 +16,9 @@
             <table>
               <thead>
               <tr>
-                <th>Task</th>
-                <th>Suorittaja</th>
-                <th>Hour</th>
+                <th>Nakki:</th>
+                <th>Suorittaja:</th>
+                <th>Klo:</th>
               </tr>
               </thead>
 
@@ -38,7 +38,7 @@
                       <% end %>
 
                     </td>
-                    <td><%= shift.hour %></td>
+                    <td><%= shift.hour %>.00</td>
                   </tr>
               <% end %>
               </tbody>
