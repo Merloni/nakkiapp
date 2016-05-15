@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
 
-  validate :times_must_be_correct
+  validate :end_time_is_after_start_time
   validates_presence_of :type
 
   belongs_to :user
@@ -17,8 +17,10 @@ class Task < ActiveRecord::Base
     end
   end
 
-  def times_must_be_correct
-    errors.add(:base, 'Loppuaika on oltava alkuajan jälkeen') unless (self.end_time >= self.start_time)
+  def end_time_is_after_start_time
+    if (end_time && start_time) && end_time < start_time
+      errors.add(:end_time, "must be after start time")
+    end
   end
 
 end
