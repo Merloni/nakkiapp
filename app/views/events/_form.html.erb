@@ -1,4 +1,4 @@
-<%= form_for(@event) do |f| %>
+<%= simple_form_for @event do |f| %>
     <% if @event.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -11,18 +11,15 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, :placeholder => "Tapahtuman nimi" %>
-    </div>
-    <div class="field">
-      <%= f.label :date %><br>
-      <%= f.date_select :date %>
-    </div>
-    <div class="field">
-      <%= f.label :place_id %><br>
-      <%= f.select :place_id, options_from_collection_for_select(@places, :id, :name_with_address) %>
-    </div>
+    <%= f.input :name, :placeholder => "Tapahtuman nimi" %>
+    <%= f.input :date,  start_year: Date.today.year,
+                        end_year: Date.today.year + 1,
+                        order: [:day, :month, :year],
+                        input_html: { class: 'date-field' } %>
+
+
+
+    <%= f.input :place_id, collection: @places, as: :select, prompt: "Valitse paikka" %>
     <div class="actions">
       <%= f.submit "Lisää taskit", class: "button" %>
     </div>

@@ -116,3 +116,7 @@ table tr:nth-of-type(odd) {
 .task {
   margin-bottom: 20px;
 }
+
+.date-field {
+   width: 33%;
+}
