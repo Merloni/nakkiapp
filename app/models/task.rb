@@ -16,7 +16,7 @@ class Task < ActiveRecord::Base
     end
   end
   def end_time_is_after_start_time
-    if end_time < start_time
+    if (end_time && start_time) && end_time < start_time
       errors.add(:end_time, "must be after start time")
     end
   end

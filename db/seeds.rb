@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Place.create(name: "Klusteri", address: "Leppäsuonkatu 11, Helsinki")
-Place.create(name: "Sivistys", address: "Leppäsuonkatu 11, Helsinki")
-Place.create(name: "Alina", address: "Mannerheimintie 5A, Helsinki")
+Place.create!(name: "Klusteri", address: "Leppäsuonkatu 11, Helsinki")
+Place.create!(name: "Sivistys", address: "Leppäsuonkatu 11, Helsinki")
+Place.create!(name: "Alina", address: "Mannerheimintie 5A, Helsinki")
 
-Type.create(name: "Narikka")
-Type.create(name: "Lipunmyynti")
-Type.create(name: "Juomanmyynti")
+Type.create!(name: "Narikka")
+Type.create!(name: "Lipunmyynti")
+Type.create!(name: "Juomanmyynti")
