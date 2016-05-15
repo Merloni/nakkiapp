@@ -7,12 +7,12 @@
     <%= link_to 'Destroy', @place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </div>
   <br>
-  
+
 <script>
   var map;
   var marker;
   function initMap() {
-    $.get("http://nakkiapp.herokuapp.com/"+<%= @place.id %>+".json", function(data) {
+    $.get("http://nakkiapp.herokuapp.com/places/"+<%= @place.id %>+".json", function(data) {
       var places = data;
 
       places.forEach(function(place){
