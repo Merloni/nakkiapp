@@ -18,8 +18,4 @@ Projektiin on kirjoitettu jonkin verran yksikkötestejä, jotka testaavat modeli
 
 ### Datamalli
 
-[Käyttäjä]1-*[Shift]
-[Task]1-*[Shift]
-[Task]-[Type]
-[Event]1-*[Task]
-[Place]1-1[Task]
+![alt tag](https://raw.githubusercontent.com/Merloni/nakkiapp/master/e8f8f0c4.png)
