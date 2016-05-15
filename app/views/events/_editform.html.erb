@@ -32,7 +32,7 @@
 
 <% end %>
 <% @event.tasks.each do |task| %>
-    <h4><%= task.type.name %> (<%= task.start_time.strftime("%H:%M") %> - <%= task.end_time.strftime("%I:%M") %>)</h4>
+    <h4><%= task.type.name %> (<%= task.to_hours_and_minutes(task.start_time)%> - <%= task.to_hours_and_minutes(task.end_time) %>)</h4>
 
 
 <% end %>
