@@ -14,10 +14,24 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if shift.save
-        format.html { redirect_to root_path, notice: 'Shift was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Hyppäsit nakkiin.' }
       else
         format.html { render root_path }
       end
+    end
+  end
+  def remove_user_from
+    shift = Shift.find(params[:id])
+    shift.user_id = nil
+    shift.save
+
+    respond_to do |format|
+      if shift.save
+        format.html {redirect_to root_path, notice: 'Poistuit nakista.'}
+      else
+        format.html {render root_path}
+      end
+
     end
   end
 
@@ -72,6 +86,12 @@ class ShiftsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to shifts_url, notice: 'Shift was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  def remove_user_from_shift
+    @shift.user_id = nil
+    respond_to do |format|
+      format.html {redirect_to :back, notice: 'Poistuit vuorosta.'}
     end
   end
 
