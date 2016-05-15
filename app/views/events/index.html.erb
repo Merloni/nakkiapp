@@ -13,32 +13,36 @@
         <% end %>
 
         <% event.tasks.each do |task| %>
-          <table>
-            <thead>
+            <table>
+              <thead>
               <tr>
                 <th>Task</th>
                 <th>Suorittaja</th>
                 <th>Hour</th>
               </tr>
-            </thead>
+              </thead>
 
-            <tbody>
+              <tbody>
               <% task.shifts.each do |shift| %>
-                <tr>
-                  <td><%= shift.task.type.name %></td>
-                  <td>
-                    <% if shift.user_id %>
-                      <%= shift.user.email %>
-                    <% else %>
-                      <%= link_to "Ota vuoro!", take_shift_path(id: shift.id) %>
-                    <% end %>
+                  <tr>
+                    <td><%= shift.task.type.name %></td>
+                    <td>
+                      <% if shift.user_id %>
+                          <% if shift.user_id == current_user.id %>
+                              <%= link_to "Poista vuoro(#{current_user.first_name})", remove_user_from_shift_path(id: shift.id) %>
+                          <% else %>
+                              <%= shift.user.first_name %> <%= shift.user.last_name %>
+                          <% end %>
+                      <% else %>
+                          <%= link_to "Ota vuoro!", take_shift_path(id: shift.id) %>
+                      <% end %>
 
-                  </td>
-                  <td><%= shift.hour %></td>
-                </tr>
+                    </td>
+                    <td><%= shift.hour %></td>
+                  </tr>
               <% end %>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
 
         <% end %>
 
