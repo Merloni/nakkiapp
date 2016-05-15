@@ -1,36 +1,5 @@
-<%= form_for(@event) do |f| %>
-    <% if @event.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<%= render 'form' %>
 
-          <ul>
-            <% @event.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, :placeholder => "Tapahtuman nimi" %>
-    </div>
-    <div class="field">
-      <%= f.label :date %><br>
-      <%= f.date_select :date %>
-    </div>
-    <div class="field">
-      <%= f.label :place_id %><br>
-      <%= f.select :place_id, options_from_collection_for_select(@places, :id, :name_with_address) %>
-    </div>
-    <div class="field">
-
-    </div>
-    <div class="actions">
-      <%= f.submit "Tallenna event", class: "button" %>
-    </div>
-
-<% end %>
 <% @event.tasks.each do |task| %>
     <h4><%= task.type.name %> (<%= task.to_hours_and_minutes(task.start_time)%> - <%= task.to_hours_and_minutes(task.end_time) %>)</h4>
 

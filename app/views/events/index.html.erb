@@ -4,8 +4,8 @@
   <% if @events.empty? %>
   <h2>Ei nakkeja :--(</h2>
   <% end %>
-
 </div>
+
 <% @events.each do |event| %>
 <div class="row medium-8 large-7 columns content">
   <div class="event-header">
@@ -14,8 +14,10 @@
       <%= link_to(@places.find{|s| s.id = event.place_id}) do %>
       <small>@<%= @places.find{|s| s.id = event.place_id}.name %></small></h2>
       <% end %>
+    </div>
 
-      <% event.tasks.each do |task| %>
+
+    <% event.tasks.each do |task| %>
       <table>
         <thead>
           <tr>
@@ -31,36 +33,24 @@
             <td><%= shift.task.type.name %></td>
             <td>
               <% if shift.user_id %>
-              <% if shift.user_id == current_user.id %>
-              <%= link_to "Poista vuoro(#{current_user.first_name})", remove_user_from_shift_path(id: shift.id) %>
+                <% if shift.user_id == current_user.id %>
+                  <%= link_to "Poista vuoro(#{current_user.first_name})", remove_user_from_shift_path(id: shift.id) %>
+                <% else %>
+                  <%= shift.user.first_name %> <%= shift.user.last_name %>
+                <% end %>
               <% else %>
-              <%= shift.user.first_name %> <%= shift.user.last_name %>
+                <%= link_to "Ota vuoro!", take_shift_path(id: shift.id) %>
               <% end %>
-              <% else %>
-              <%= link_to "Ota vuoro!", take_shift_path(id: shift.id) %>
-              <% end %>
-
             </td>
             <td><%= shift.hour %>.00</td>
           </tr>
           <% end %>
         </tbody>
       </table>
-    </td>
-    <td><%= shift.hour %></td>
-  </tr>
+    <% end %>
+
+    <%= link_to 'Edit', edit_event_path(event) %>
+    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </div>
   <% end %>
-</tbody>
-</table>
-
-<% end %>
-
-<br>
-<%= link_to 'Edit', edit_event_path(event) %>
-<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</div>
-<% end %>
-<br>
-<%= link_to new_event_path, class: "ball-add" do %>
-<%= fa_icon "plus 2x" %>
-<% end %>
+  <br>
