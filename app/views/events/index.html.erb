@@ -8,40 +8,59 @@
 
 <% @events.each do |event| %>
   <div class="row medium-8 large-7 columns content">
+
+    <div class="event-header">
+      <%= event.date.strftime("%d.%m.%Y") %><br>
+      <h2><%=link_to event.name, event_path(event) %>
+        <%= link_to(event.place) do %>
+        <small>@<%= event.place.name %></small></h2>
+        <% end %>
+    </div>
+
     <% task_types = []; event.tasks.each do |task| task_types.push(task.type.id) unless task_types.include? task.type.id end %>
 
     <% task_types.each do |type| %>
     <table>
       <thead>
         <tr>
-          <th>Nakki:</th>
+          <th>Klo:</th>
           <% event.tasks.find_all { |task|  task.type.id == type }.each do |i|  %>
             <th>Suorittaja:</th>
           <% end %>
-          <th>Klo:</th>
         </tr>
       </thead>
       <tbody>
-        <% (0..event.tasks[0].shifts.length-1).each do |i| %>
+        <h4><%= @types.find(type).name %></h4>
+
+        <% [16,17,18,19,20,21,22,23,0,1,2,3,4,5,6].each do |i| %>
+
           <tr>
             <td>
-              <%= @types.find(type).name %>
+              <%= i<9 ? "0"+i.to_s : i.to_s %>
             </td>
-            <% event.tasks.find_all { |t|  t.type.id == type }.each do |task|  %>
+            <% event.tasks.find_all{ |t|  t.type.id == type }.each do |task|  %>
               <td>
-                <%= task.id %>
-                <%= task.shifts[i] %>
+                <% if task.shifts.find{|shift| shift.hour == i} %>
+                  <% if task.shifts.find{|shift| shift.hour == i}.user_id %>
+                    <% if task.shifts.find{|shift| shift.hour == i}.user_id == current_user.id %>
+                      <%= link_to "Peru vuorosi", remove_user_from_shift_path(id: task.shifts.find{|shift| shift.hour == i}.id) %>
+                    <% else %>
+                      <%= task.shifts.find{|shift| shift.hour == i}.user.first_name %> <%= task.shifts.find{|shift| shift.hour == i}.user.last_name %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to "Ota vuoro!", take_shift_path(id: task.shifts.find{|shift| shift.hour == i}.id) %>
+                  <% end %>
+                <% end %>
               </td>
             <% end %>
-            <td>
-              <%= event.tasks[0].shifts[i].hour %>
-            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
     <% end %>
 
+    <%= link_to 'Edit', edit_event_path(event) %>
+    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </div>
 <% end %>
 

@@ -24,8 +24,8 @@ class EventsController < ApplicationController
     @places = Place.all
     @types = Type.all
     @task = Task.new
-    @shifts = [Time.new(@event.date.year, @event.date.month, @event.date.day, 18, 0)]
-    (1..10).each do |i|
+    @shifts = [Time.new(@event.date.year, @event.date.month, @event.date.day, 16, 0)]
+    (1..14).each do |i|
       @shifts.push(@shifts[0] + i*60*60)
     end
   end

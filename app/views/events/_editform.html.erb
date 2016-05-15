@@ -1,7 +1,7 @@
 <%= render 'form' %>
 
 <% @event.tasks.each do |task| %>
-  <h4><%= task.type.name %> (<%= task.to_hours_and_minutes(task.start_time)%> - <%= task.to_hours_and_minutes(task.end_time) %>)</h4>
+  <h4><%= task.type.name %> (<%= task.to_hours_and_minutes(task.start_time)%> - <%= task.to_hours_and_minutes(task.end_time) %>) <small><%= link_to 'Poista', task, method: :delete, data: {confirm: 'Ootko varma?'} %></small></h4>
 <% end %>
 
 <%= form_for(@task) do |t| %>
