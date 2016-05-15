@@ -16,4 +16,10 @@ Uuden tapahtuman luominen onnistuu painamalla etusivulla oikeassa alareunassa n�
 
 Projektiin on kirjoitettu jonkin verran yksikkötestejä, jotka testaavat modelien validaation olevan kunnossa. Applikaation normaali käyttöflow on tällä hetkellä sen verran yksinkertainen, ettei siihen ole feature-testejä.
 
-###
+### Datamalli
+
+[Käyttäjä]1-*[Shift]
+[Task]1-*[Shift]
+[Task]-[Type]
+[Event]1-*[Task]
+[Place]1-1[Task]
