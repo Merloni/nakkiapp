@@ -18,4 +18,4 @@ Projektiin on kirjoitettu jonkin verran yksikkötestejä, jotka testaavat modeli
 
 ### Datamalli
 
-![alt tag](https://raw.githubusercontent.com/Merloni/nakkiapp/master/df285eec.png.png)
+![alt tag](https://raw.githubusercontent.com/Merloni/nakkiapp/master/df285eec.png)
