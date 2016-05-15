@@ -7,52 +7,44 @@
 </div>
 
 <% @events.each do |event| %>
-<div class="row medium-8 large-7 columns content">
-  <div class="event-header">
-    <%= event.date %><br>
-    <h2><%=link_to event.name, event_path(event) %>
-      <%= link_to(event.place) do %>
-      <small>@<%= event.place.name %></small></h2>
-      <% end %>
-    </div>
+  <div class="row medium-8 large-7 columns content">
+    <% task_types = []; event.tasks.each do |task| task_types.push(task.type.id) unless task_types.include? task.type.id end %>
 
-
-    <% event.tasks.each do |task| %>
+    <% task_types.each do |type| %>
     <table>
       <thead>
         <tr>
           <th>Nakki:</th>
-          <th>Suorittaja:</th>
+          <% event.tasks.find_all { |task|  task.type.id == type }.each do |i|  %>
+            <th>Suorittaja:</th>
+          <% end %>
           <th>Klo:</th>
         </tr>
       </thead>
-
       <tbody>
-        <% task.shifts.each do |shift| %>
-        <tr>
-          <td><%= shift.task.type.name %></td>
-          <td>
-            <% if shift.user_id %>
-            <% if shift.user_id == current_user.id %>
-            <%= link_to "Poista vuoro(#{current_user.first_name})", remove_user_from_shift_path(id: shift.id) %>
-            <% else %>
-            <%= shift.user.first_name %> <%= shift.user.last_name %>
+        <% (0..event.tasks[0].shifts.length-1).each do |i| %>
+          <tr>
+            <td>
+              <%= @types.find(type).name %>
+            </td>
+            <% event.tasks.find_all { |t|  t.type.id == type }.each do |task|  %>
+              <td>
+                <%= task.id %>
+                <%= task.shifts[i] %>
+              </td>
             <% end %>
-            <% else %>
-            <%= link_to "Ota vuoro!", take_shift_path(id: shift.id) %>
-            <% end %>
-          </td>
-          <td><%= shift.value %></td>
-        </tr>
+            <td>
+              <%= event.tasks[0].shifts[i].hour %>
+            </td>
+          </tr>
         <% end %>
       </tbody>
     </table>
     <% end %>
 
-    <%= link_to 'Edit', edit_event_path(event) %>
-    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </div>
 <% end %>
+
 <br>
 <%= link_to new_event_path, class: "ball-add" do %>
   <%= fa_icon "plus 2x" %>
