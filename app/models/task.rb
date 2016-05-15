@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  validates_numericality_of :end_time, greater_than: :start_time
+  validates_presence_of :type
   belongs_to :user
   belongs_to :type
   belongs_to :event, dependent: :destroy
