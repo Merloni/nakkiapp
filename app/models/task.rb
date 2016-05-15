@@ -1,4 +1,5 @@
 class Task < ActiveRecord::Base
+
   validate :end_time_is_after_start_time
   validates_presence_of :type
 
@@ -15,6 +16,7 @@ class Task < ActiveRecord::Base
       time.strftime("%H:%M")
     end
   end
+
   def end_time_is_after_start_time
     if (end_time && start_time) && end_time < start_time
       errors.add(:end_time, "must be after start time")
