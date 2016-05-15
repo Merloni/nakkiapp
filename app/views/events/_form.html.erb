@@ -13,14 +13,18 @@
 
     <%= f.input :name, :placeholder => "Tapahtuman nimi" %>
     <%= f.input :date,  start_year: Date.today.year,
-                        end_year: Date.today.year + 1,
-                        order: [:day, :month, :year],
-                        input_html: { class: 'date-field' } %>
+                end_year: Date.today.year + 1,
+                order: [:day, :month, :year],
+                input_html: { class: 'date-field' } %>
 
 
 
-    <%= f.input :place_id, collection: @places, as: :select, prompt: "Valitse paikka" %>
+    <%= f.input :place_id, collection: @places, as: :select, selected: 1%>
     <div class="actions">
-      <%= f.submit "Lisää taskit", class: "button" %>
+      <% if !@event.id.nil? %>
+          <%= f.submit "Tallenna tapahtuma", class: "button" %>
+      <% else %>
+          <%= f.submit "Lisää taskit", class: "button" %>
+      <% end %>
     </div>
 <% end %>
