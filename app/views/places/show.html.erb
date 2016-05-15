@@ -14,6 +14,7 @@
   function initMap() {
     $.get("http://nakkiapp.herokuapp.com/places/"+<%= @place.id %>+".json", function(data) {
       var place = data;
+      console.log(place)
       var latlng = new google.maps.LatLng(place.latitude, place.longitude);
 
       var mapOptions = {
@@ -21,7 +22,7 @@
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-      var e = document.getElementById("map"+place.id);
+      var e = document.getElementById("map");
       map = new google.maps.Map(e, mapOptions);
 
       var markerOptions = {
