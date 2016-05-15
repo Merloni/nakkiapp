@@ -12,6 +12,7 @@
     <% end %>
 
     <%= f.input :name, :placeholder => "Tapahtuman nimi" %>
+
     <div class="row">
       <div class="small-4 columns">
         <%= f.date_select :date,
@@ -24,8 +25,13 @@
 
 
 
-    <%= f.input :place_id, collection: @places, as: :select, prompt: "Valitse paikka" %>
+
+    <%= f.input :place_id, collection: @places, as: :select, selected: 1%>
     <div class="actions">
-      <%= f.submit "Lisää taskit", class: "button" %>
+      <% if !@event.id.nil? %>
+          <%= f.submit "Tallenna tapahtuma", class: "button" %>
+      <% else %>
+          <%= f.submit "Lisää taskit", class: "button" %>
+      <% end %>
     </div>
 <% end %>
