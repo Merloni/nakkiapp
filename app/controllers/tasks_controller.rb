@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
 
+
     respond_to do |format|
       if @task.save
 
@@ -41,7 +42,9 @@ class TasksController < ApplicationController
         format.html { redirect_to :back, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
-        format.html { render :new }
+        kulli
+        
+        format.html { redirect_to :back , notice: @task.errors}
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end

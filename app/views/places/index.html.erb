@@ -1,11 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="row medium-8 large-7 columns">
+  <p id="notice"><%= notice %></p>
 
+  <% if @places.empty? %>
+      <h2>Ei paikkoja :--(</h2>
+  <% end %>
+</div>
 
-
-<% if @places.empty? %>
-  <h2>Ei paikkoja vielä!</h2>
-
-<% end %>
 <% @places.each do |place| %>
     <div class="row medium-8 large-7 columns content">
       <h2><%= place.name %></h2>
@@ -19,7 +19,6 @@
 <%= link_to new_place_path, class: "ball-add" do %>
     <%= fa_icon "plus 2x" %>
 <% end %>
-
 
 <script>
   var maps = [];

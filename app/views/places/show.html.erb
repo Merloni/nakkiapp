@@ -7,25 +7,34 @@
     <%= link_to 'Destroy', @place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </div>
   <br>
-
-
+  
 <script>
-var map;
-function initMap() {
-  $.get("http://localhost:3000/places/"+<%= @place.id %>".json", function(data) {
-    var place = data;
-    console.log(place);
+  var map;
+  var marker;
+  function initMap() {
+    $.get("http://nakkiapp.herokuapp.com/"+<%= @place.id %>+".json", function(data) {
+      var places = data;
 
-    var latlng = new google.maps.LatLng(place.latitude, place.longitude);
-    var options = {
-                    zoom: 15,
-                    center: latlng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                  }
+      places.forEach(function(place){
+        var latlng = new google.maps.LatLng(place.latitude, place.longitude);
 
-    var e = document.getElementById("map");
-    map = new google.maps.Map(e, options);
-  });
-}
+        var mapOptions = {
+          zoom: 15,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var e = document.getElementById("map"+place.id);
+        map = new google.maps.Map(e, mapOptions);
+
+        var markerOptions = {
+          position: latlng,
+          map: map,
+          title: place.name
+        }
+
+        marker = new google.maps.Marker(markerOptions);
+      });
+    });
+  }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDWSWO0vaWjAm9tfiswx48o_HKxjy1zaM&callback=initMap" async defer></script>
