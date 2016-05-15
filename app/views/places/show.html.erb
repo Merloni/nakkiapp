@@ -13,27 +13,24 @@
   var marker;
   function initMap() {
     $.get("http://nakkiapp.herokuapp.com/places/"+<%= @place.id %>+".json", function(data) {
-      var places = data;
+      var place = data;
+      var latlng = new google.maps.LatLng(place.latitude, place.longitude);
 
-      places.forEach(function(place){
-        var latlng = new google.maps.LatLng(place.latitude, place.longitude);
+      var mapOptions = {
+        zoom: 15,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var e = document.getElementById("map"+place.id);
+      map = new google.maps.Map(e, mapOptions);
 
-        var mapOptions = {
-          zoom: 15,
-          center: latlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var e = document.getElementById("map"+place.id);
-        map = new google.maps.Map(e, mapOptions);
+      var markerOptions = {
+        position: latlng,
+        map: map,
+        title: place.name
+      }
 
-        var markerOptions = {
-          position: latlng,
-          map: map,
-          title: place.name
-        }
-
-        marker = new google.maps.Marker(markerOptions);
-      });
+      marker = new google.maps.Marker(markerOptions);
     });
   }
 </script>
