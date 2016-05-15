@@ -12,10 +12,17 @@
     <% end %>
 
     <%= f.input :name, :placeholder => "Tapahtuman nimi" %>
-    <%= f.input :date,  start_year: Date.today.year,
-                end_year: Date.today.year + 1,
-                order: [:day, :month, :year],
-                input_html: { class: 'date-field' } %>
+
+    <div class="row">
+      <div class="small-4 columns">
+        <%= f.date_select :date,
+                          date_separator: "</div><div class='small-4 columns'>",
+                          start_year: Date.today.year,
+                          end_year: Date.today.year + 1,
+                          order: [:day, :month, :year]%>
+      </div>
+    </div>
+
 
 
 

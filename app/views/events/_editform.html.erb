@@ -1,29 +1,33 @@
 <%= render 'form' %>
 
 <% @event.tasks.each do |task| %>
-    <h4><%= task.type.name %> (<%= task.to_hours_and_minutes(task.start_time)%> - <%= task.to_hours_and_minutes(task.end_time) %>)</h4>
-
-
+  <h4><%= task.type.name %> (<%= task.to_hours_and_minutes(task.start_time)%> - <%= task.to_hours_and_minutes(task.end_time) %>)</h4>
 <% end %>
 
 <%= form_for(@task) do |t| %>
+  <%= t.hidden_field :event_id, :value => @event.id %>
+  <div class="row">
+    <div class="small-8 columns">
+      <div class="field">
+        <%= t.label "nakki" %>
+        <%= t.select :type_id, options_from_collection_for_select(@types, :id, :name) %>
+      </div>
+    </div>
+    <div class="small-2 columns">
+      <div class="field">
+        <%= t.label "alkaa" %>
+        <%= t.select :start_time, (@shifts.map {|s| [s.hour, s] }) %>
+      </div>
+    </div>
+    <div class="small-2 columns">
+      <div class="field">
+        <%= t.label "loppuu" %>
+        <%= t.select :end_time, (@shifts.map {|s| [s.hour, s] }) %>
+      </div>
+    </div>
+  </div>
 
-    <h3>Lisää taskeja</h3>
-    <div class="field">
-      <%= t.label :type_id %>
-      <%= t.select :type_id, options_from_collection_for_select(@types, :id, :name) %>
-    </div>
-    <div class="field">
-      <%= t.label :start_time %>
-      <%= t.select :start_time, (@shifts.map {|s| [s.hour, s] }) %>
-    </div>
-    <div class="field">
-      <%= t.label :end_time %>
-      <%= t.select :end_time, (@shifts.map {|s| [s.hour, s] }) %>
-    </div>
-    <%= t.hidden_field :event_id, :value => @event.id %>
-
-    <%= t.submit "Lisää task", class: "button" %>
+  <%= t.submit "Lisää task", class: "button" %>
 
 
 <% end %>
