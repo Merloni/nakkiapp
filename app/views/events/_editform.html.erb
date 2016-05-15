@@ -16,13 +16,13 @@
     <div class="small-2 columns">
       <div class="field">
         <%= t.label "alkaa" %>
-        <%= t.select :start_time, (@shifts.map {|s| [s.hour, s] }) %>
+        <%= t.select :start_time, (@shifts.map {|s| [s.hour<9 ? "0"+s.hour.to_s : s.hour.to_s, s] }) %>
       </div>
     </div>
     <div class="small-2 columns">
       <div class="field">
         <%= t.label "loppuu" %>
-        <%= t.select :end_time, (@shifts.map {|s| [s.hour, s] }) %>
+        <%= t.select :end_time, (@shifts.map {|s| [s.hour<9 ? "0"+s.hour.to_s : s.hour.to_s, s] }) %>
       </div>
     </div>
   </div>
