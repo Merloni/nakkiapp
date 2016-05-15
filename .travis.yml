@@ -3,7 +3,13 @@ language: ruby
 rvm:
  - 2.3.0
 
- deploy:
+script:
+ - bundle exec rake db:migrate --trace
+ - RAILS_ENV=test bundle exec rake db:migrate --trace
+ - bundle exec rake db:test:prepare
+ - bundle exec rspec -fd spec/
+
+deploy:
   provider: heroku
   api_key: 450ab79d-e296-405e-82e2-7b68df7d0798
   app: nakkiapp
