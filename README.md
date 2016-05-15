@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Merloni/nakkiapp.svg?branch=master)](https://travis-ci.org/Merloni/nakkiapp)
+
 Projekti on edelleen kehityksen alla, ja saadaan toivon mukaan käyttöön syksyyn mennessä, ennen uusien opiskelijoiden saapumista.
 
 ##Nakkiapp
