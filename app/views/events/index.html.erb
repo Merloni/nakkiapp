@@ -11,8 +11,8 @@
   <div class="event-header">
     <%= event.date %><br>
     <h2><%=link_to event.name, event_path(event) %>
-      <%= link_to(@places.find{|s| s.id = event.place_id}) do %>
-      <small>@<%= @places.find{|s| s.id = event.place_id}.name %></small></h2>
+      <%= link_to(event.place) do %>
+      <small>@<%= event.place.name %></small></h2>
       <% end %>
     </div>
 
